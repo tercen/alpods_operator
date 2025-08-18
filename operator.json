@@ -1,0 +1,36 @@
+{
+    "name": "Template Python operator",
+    "description": "Mean operator implemented in Python",
+    "tags": ["template"],
+    "authors": ["tercen"],
+    "urls": ["https://github.com/tercen/template-python-operator"],
+    "container":"ghcr.io/tercen/template-python-operator:latest",
+    "properties": [
+        {
+            "kind": "DoubleProperty",
+            "name": "Property1",
+            "defaultValue": 42.0,
+            "description": "Example Double Property"
+        },
+        {
+            "kind": "StringProperty",
+            "name": "Property2",
+            "defaultValue": "42",
+            "description": "Example String Property"
+        },
+        {
+            "kind": "BooleanProperty",
+            "name": "Property3",
+            "defaultValue": true,
+            "description": "Example Boolean Property"
+        },
+        {
+            "kind": "EnumeratedProperty",
+            "isSingleSelection":true,
+            "name": "Property4",
+            "defaultValue": "element2",
+            "values": ["element1", "element2", "element3"],
+            "description": "Example Enumerated Property"
+        }
+    ]
+}
