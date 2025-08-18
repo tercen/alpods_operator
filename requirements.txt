@@ -1,1 +1,0 @@
-git+https://github.com/tercen/tercen_python_client@0.11.3

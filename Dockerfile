@@ -1,12 +1,12 @@
-FROM tercen/runtime-python39:0.1.0
+FROM tercen/runtime-r44:4.4.3-7
 
 COPY . /operator
 WORKDIR /operator
 
-ENV PYTHONPATH "${PYTHONPATH}:~/.pyenv/versions/3.9.0/bin/python3"
-RUN python3 -m pip install -r ./requirements.txt
+# Install required packages
+RUN R -e "install.packages(c('dplyr', 'tidyr', 'tibble'), repos='https://cloud.r-project.org/')"
 
 ENV TERCEN_SERVICE_URI https://tercen.com
 
-ENTRYPOINT ["python3", "main.py"]
+ENTRYPOINT ["R", "--no-save", "--no-restore", "--no-environ", "--slave", "-f", "main.R", "--args"]
 CMD ["--taskId", "someid", "--serviceUri", "https://tercen.com", "--token", "sometoken"]

@@ -1,61 +1,44 @@
+# ALPODs Operator
 
-# Template Python Operator
+##### Description
+The ALPODs (Algorithmic Population Descriptions) Operator performs cluster classification on cytometry data. It builds a decision tree to identify and classify cell populations based on marker expressions.
 
-Cell-wise mean calculated implemented in Python.
+##### Usage
+Input projection|.
+---|---
+`row`        | represents the variables (e.g., markers, channels)
+`column`     | represents the observations (e.g., cells, events)
+`y-axis`     | measurement values
 
-## Python operator - Development workflow
+Input parameters|.
+---|---
+`verbose`| boolean, enables detailed logging, default is `true`
+`min_samples`| numeric, minimum number of samples required to split a node, default is `10`
+`purity_threshold`| numeric, purity threshold for stopping node splitting, default is `0.95`
+`effect_size_threshold`| numeric, effect size threshold for relevant subpopulations, default is `0.5`
 
-* Set up [the Tercen Studio development environment](https://github.com/tercen/tercen_studio)
-* Create a new git repository based on the [template Python operator](https://github.com/tercen/template-python-operator)
-* Open VS Code Server by going to: http://127.0.0.1:8443
-* Clone this repository into VS Code (using the 'Clone from GitHub' command from the Command Palette for example)
-* Load the environment and install core requirements by running the following commands in the terminal:
+Output relations|.
+---|---
+`cell_type`| character, the identified cell type/cluster
+`rule`| character, the classification rule used
 
-```bash
-source /config/.pyenv/versions/3.9.0/bin/activate
-pip install -r requirements.txt
-```
+##### Details
+The operator takes cytometry data as input and performs the following steps:
+1. Loads data from Tercen projections
+2. Transforms the data into a format suitable for the ALPODs algorithm
+3. Builds a decision tree to classify cell populations
+4. Extracts classification rules from the decision tree
+5. Returns the classified cell types and their associated rules
 
-* Develop your operator. Note that you can interact with an existing data step by specifying arguments to the `TercenContext` function:
+The ALPODs algorithm builds a decision tree by recursively splitting the data based on marker expressions. It identifies the optimal splits that maximize information gain at each step. The algorithm stops splitting when one of the following criteria is met:
+- Maximum depth is reached
+- Minimum number of samples is reached
+- Node purity exceeds the threshold
+- No further informative splits can be found
 
-```python
-tercenCtx = ctx.TercenContext()
-```
+##### References
+- ALPODs: Algorithmic Population Descriptions algorithm
 
-```python
-tercenCtx = ctx.TercenContext(
-    workflowId="YOUR_WORKFLOW_ID",
-    stepId="YOUR_STEP_ID",
-    username="admin", # if using the local Tercen instance
-    password="admin", # if using the local Tercen instance
-    serviceUri = "http://tercen:5400/" # if using the local Tercen instance 
-)
-```
-
-* Generate requirements
-
-```bash
-python3 -m tercen.util.requirements . > requirements.txt
-```
-
-* Push your changes to GitHub: triggers CI GH workflow
-* Tag the repository: triggers Release GH workflow
-* Go to tercen and install your operator
-
-
-## Helpful Commands
-
-### Install Tercen Python Client
-
-```bash
-python3 -m pip install --force git+https://github.com/tercen/tercen_python_client@0.7.1
-```
-
-### Wheel
-
-Though not strictly mandatory, many packages require it.
-
-```bash
-python3 -m pip install wheel
-```
-
+##### See Also
+- [Tercen](https://tercen.com)
+- [Tercen R Client](https://github.com/tercen/tercenApi)
