@@ -8,7 +8,7 @@ library(tibble)
 ctx <- tercenCtx()
 
 # Get operator properties
-verbose <- ctx$op.value('verbose', default = TRUE, type = logical)
+verbose <- TRUE
 min_samples_pct <- ctx$op.value('min_samples_pct', default = 0.02, type = as.numeric)
 effect_size_threshold <- ctx$op.value('effect_size_threshold', default = 0.4, type = as.numeric)
 abc_threshold_a <- ctx$op.value('abc_threshold_a', default = 0.8, type = as.numeric)

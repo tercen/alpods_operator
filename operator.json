@@ -7,12 +7,6 @@
     "container": "ghcr.io/tercen/alpods_operator:main",
     "properties": [
         {
-            "kind": "BooleanProperty",
-            "name": "verbose",
-            "defaultValue": true,
-            "description": "Enable detailed logging"
-        },
-        {
             "kind": "DoubleProperty",
             "name": "min_samples_pct",
             "defaultValue": 0.01,
