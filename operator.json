@@ -1,10 +1,10 @@
 {
     "name": "ALPODs Operator",
     "description": "Performs cluster classification using the ALPODs (Algorithmic Population Descriptions) algorithm.",
-    "tags": ["cytometry", "clustering", "classification", "ALPODs"],
+    "tags": ["cytometry", "clustering", "classification"],
     "authors": ["tercen"],
     "urls": ["https://github.com/tercen/alpods_operator"],
-    "container": "ghcr.io/tercen/alpods_operator:latest",
+    "container": "ghcr.io/tercen/alpods_operator:main",
     "properties": [
         {
             "kind": "BooleanProperty",
