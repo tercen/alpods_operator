@@ -191,40 +191,6 @@
       "Maintainer": "Davis Vaughan <davis@posit.co>",
       "Repository": "CRAN"
     },
-    "curl": {
-      "Package": "curl",
-      "Version": "5.0.0",
-      "Source": "Repository",
-      "Type": "Package",
-      "Title": "A Modern and Flexible Web Client for R",
-      "Authors@R": "c( person(\"Jeroen\", \"Ooms\", role = c(\"aut\", \"cre\"), email = \"jeroen@berkeley.edu\", comment = c(ORCID = \"0000-0002-4035-0289\")), person(\"Hadley\", \"Wickham\", , \"hadley@rstudio.com\", role = \"ctb\"), person(\"RStudio\", role = \"cph\") )",
-      "Description": "The curl() and curl_download() functions provide highly configurable drop-in replacements for base url() and download.file() with better performance, support for encryption (https, ftps), gzip compression, authentication, and other 'libcurl' goodies. The core of the package implements a framework for performing fully customized requests where data can be processed either in memory, on disk, or streaming via the callback or connection interfaces. Some knowledge of 'libcurl' is recommended; for a more-user-friendly web client see the 'httr' package which builds on this package with http specific tools and logic.",
-      "License": "MIT + file LICENSE",
-      "SystemRequirements": "libcurl: libcurl-devel (rpm) or libcurl4-openssl-dev (deb).",
-      "URL": "https://github.com/jeroen/curl (devel) https://curl.se/libcurl/ (upstream)",
-      "BugReports": "https://github.com/jeroen/curl/issues",
-      "Suggests": [
-        "spelling",
-        "testthat (>= 1.0.0)",
-        "knitr",
-        "jsonlite",
-        "rmarkdown",
-        "magrittr",
-        "httpuv (>= 1.4.4)",
-        "webutils"
-      ],
-      "VignetteBuilder": "knitr",
-      "Depends": [
-        "R (>= 3.0.0)"
-      ],
-      "RoxygenNote": "7.2.1",
-      "Encoding": "UTF-8",
-      "Language": "en-US",
-      "NeedsCompilation": "yes",
-      "Author": "Jeroen Ooms [aut, cre] (<https://orcid.org/0000-0002-4035-0289>), Hadley Wickham [ctb], RStudio [cph]",
-      "Maintainer": "Jeroen Ooms <jeroen@berkeley.edu>",
-      "Repository": "CRAN"
-    },
     "dplyr": {
       "Package": "dplyr",
       "Version": "1.1.4",
@@ -405,39 +371,6 @@
       "NeedsCompilation": "no",
       "Author": "Hadley Wickham [aut, cre], RStudio [cph, fnd]",
       "Maintainer": "Hadley Wickham <hadley@rstudio.com>",
-      "Repository": "CRAN"
-    },
-    "hypergate": {
-      "Package": "hypergate",
-      "Version": "0.8.5",
-      "Source": "Repository",
-      "Title": "Machine Learning of Hyperrectangular Gating Strategies for High-Dimensional Cytometry",
-      "Authors@R": "c( person(\"Etienne\",\"Becht\",email=\"etienne.becht@protonmail.com\",role=c(\"cre\",\"aut\")), person(\"Samuel\",\"Granjeaud\",email=\"samuel.granjeaud@inserm.fr\",role=c(\"ctb\")) )",
-      "Description": "Given a high-dimensional dataset that typically represents a cytometry dataset, and a subset of the datapoints, this algorithm outputs an hyperrectangle so that datapoints within the hyperrectangle best correspond to the specified subset. In essence, this allows the conversion of clustering algorithms' outputs to gating strategies outputs.",
-      "Depends": [
-        "R (>= 3.5.0)"
-      ],
-      "License": "GPL-3",
-      "Encoding": "UTF-8",
-      "LazyData": "true",
-      "Imports": [
-        "stats",
-        "grDevices",
-        "utils",
-        "graphics"
-      ],
-      "Suggests": [
-        "knitr",
-        "rmarkdown",
-        "flowCore",
-        "sp",
-        "sf"
-      ],
-      "VignetteBuilder": "knitr",
-      "RoxygenNote": "7.3.0",
-      "NeedsCompilation": "no",
-      "Author": "Etienne Becht [cre, aut], Samuel Granjeaud [ctb]",
-      "Maintainer": "Etienne Becht <etienne.becht@protonmail.com>",
       "Repository": "CRAN"
     },
     "jsonlite": {
