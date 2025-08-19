@@ -5,6 +5,7 @@ WORKDIR /operator
 
 # Install required packages
 RUN R -e "install.packages(c('dplyr', 'tidyr', 'tibble'), repos='https://cloud.r-project.org/')"
+RUN R -e "renv::restore()"
 
 ENV TERCEN_SERVICE_URI https://tercen.com
 

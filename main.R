@@ -5,9 +5,7 @@ library(tibble)
 
 # Get Tercen context
 #http://127.0.0.1:5400/kumo_test/w/0b4ec8f92d47f8a388859024bb0186e7/ds/9c93405f-d024-4047-b056-1cfe02f78ac0
-options("tercen.workflowId"= "0b4ec8f92d47f8a388859024bb0186e7")
-options("tercen.stepId"= "9c93405f-d024-4047-b056-1cfe02f78ac0")
-ctx <- tercenCtx(username = "test", password = "test", serviceUri = "http://127.0.0.1:5400")
+ctx <- tercenCtx()
 
 # Get operator properties
 verbose <- ctx$op.value('verbose', default = TRUE, type = logical)
