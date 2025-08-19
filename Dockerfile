@@ -5,12 +5,12 @@ WORKDIR /operator
 
 
 
-# Set environment variables to relax compiler strictness
-ENV CFLAGS="-g -O2 -fstack-protector-strong -Wformat -Wdate-time -D_FORTIFY_SOURCE=2"
-ENV CXXFLAGS="-g -O2 -fstack-protector-strong -Wformat -Wdate-time -D_FORTIFY_SOURCE=2"
+# Use Posit Package Manager for pre-compiled binaries (Ubuntu 20.04/focal)
+ENV R_REPOS="https://packagemanager.rstudio.com/cran/__linux__/focal/latest"
 
-# Install packages one by one to isolate issues
-RUN R -e "install.packages(c('dplyr', 'tidyr', 'tibble', 'curl','jsonlite','mime'), repos='https://cloud.r-project.org/')"
+# Install from binaries to avoid compilation issues
+RUN R -e "options(repos = c(CRAN = Sys.getenv('R_REPOS'))); install.packages(c('dplyr', 'tidyr', 'tibble', 'curl', 'jsonlite', 'httr'), type = 'binary')"
+
 RUN R -e "renv::restore();"
 
 ENV TERCEN_SERVICE_URI https://tercen.com
